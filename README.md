@@ -17,7 +17,7 @@ Verify Password (Optional):
 
 ### Example 2, passwords do not match
 ```
-$ ./pwcrypt
+$ ./pwhash
 Password:
 $6$i7HX2zxZlro.lSFx$lihoVkch.IGMR.Zm5umh0s8zj6YYXna.YYBu6S5vtHYB7/oi6LURwkPUKHQuzg902FS8mxJrp9Ru0TJh2ihRQ.
 Verify Password (Optional):
@@ -26,7 +26,7 @@ Passwords did not match!
 
 ### Example 3, use STDIN
 ```
-$ echo "test" | ./pwcrypt
+$ echo "test" | ./pwhash
 $6$l9nU.NJUuJYxHmOr$O/xlOQPnVrv48BI1zkVkWXusBz5z74K0AAt0bc3cA/AHSWHP06lA/xwiiyhMX/.sQL.vcwjMemhFZTm6duj0h.
 ```
 
