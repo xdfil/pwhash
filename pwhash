@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+# Copyright 2021 Filippo DiNoto
+# SPDX-License-Identifier: Apache-2.0
+
+import sys
+import getpass
+import crypt
+from hmac import compare_digest
+
+if sys.stdin.isatty():
+   password = getpass.getpass("Password: ")
+else:
+   password = sys.stdin.readline().rstrip()
+
+pwsalt = crypt.mksalt(crypt.METHOD_SHA512)
+crypword = crypt.crypt(password, pwsalt)
+
+print(crypword)
+
+if sys.stdin.isatty():
+   password_verify = getpass.getpass("Verify Password (Optional): ")
+   if password_verify:
+       if not compare_digest(crypt.crypt(password_verify, pwsalt), crypword):
+           print("Passwords did not match!")
+
+
