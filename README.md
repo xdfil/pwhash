@@ -1,5 +1,5 @@
 # pwhash
-A Python3 script to hash passwords (SHA512)
+A Python3 script to hash passwords (SHA512) and optionally verify the password works against the hash that was generated.
 
 Usage:
 
